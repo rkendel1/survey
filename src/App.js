@@ -1,25 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  MDBBtn,
+  MDBCard,
+  MDBCardBody,
+  MDBCardFooter,
+  MDBCol,
+  MDBContainer,
+  MDBIcon,
+  MDBRadio,
+  MDBRow,
+  MDBTextArea,
+} from "mdb-react-ui-kit";
 
-function App() {
+export default function CardWithFeedback() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MDBContainer>
+      <MDBRow className="justify-content-center">
+        <MDBCol size="6">
+          <MDBCard>
+            <MDBCardBody>
+              <div className="text-center">
+                <MDBIcon far icon="" size="4x" />
+                <p>
+                  <strong>You Elected Official Has an Upcoming Vote</strong>
+                </p>
+                <p>
+                  Bill Number
+                  <strong>Bill name</strong>
+                </p>
+              </div>
+
+              <hr />
+
+              <form className="px-4" action="">
+                <p className="text-center">
+                  <strong>Your Voting Preference:</strong>
+                </p>
+                <MDBRadio
+                  name="flexRadioDefault"
+                  id="flexRadioDefault1"
+                  label="Yes"
+                  className="mb-2"
+                  defaultChecked
+                />
+                <MDBRadio
+                  name="flexRadioDefault"
+                  id="flexRadioDefault2"
+                  label="No"
+                  className="mb-2"
+                />
+               
+                <p className="text-center">
+                  <strong>Enter and optional comment</strong>
+                </p>
+                <MDBTextArea className="mb-4" label='Optional' id='textAreaExample' rows={4} />
+              </form>
+            </MDBCardBody>
+            <MDBCardFooter>
+              <div className="text-end">
+                <MDBBtn>Submit</MDBBtn>
+              </div>
+            </MDBCardFooter>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
   );
 }
-
-export default App;
